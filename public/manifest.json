@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Type Beat helper",
+  "description": "Download your type beats with BPM and KEY directly from Youtube",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage", "tabs", "downloads"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Type Beat helper",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
