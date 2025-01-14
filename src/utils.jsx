@@ -17,14 +17,12 @@ export function getCurrentTab() {
 
 export function downloadAudio(objectUrl, videoTitle) {
     chrome.downloads.download({ url: objectUrl, filename: videoTitle}, function (downloadId) {
-        console.log('Video downloaded with ID:', downloadId);
+        console.log(`Video ${downloadId} downloaded (${videoTitle})`);
     });
-
-    console.log('Downloaded', objectUrl);
 }
 
 export async function getAudio(url) {
-    const audio = await fetch(`https://api.typebeathelper.hugosohm.fr/mp3?url=${url}`);
+    const audio = await fetch(`${import.meta.env.VITE_API_BASE_URL}/mp3?url=${url}`);
     if (!audio.ok) {
         console.error(`Error while getting audio for ${url}`);
         return null;
@@ -38,7 +36,7 @@ async function fetchKeyAndBpm(signal) {
     const formData = new FormData();
     formData.append('file', blob, 'audioBuffer.bin');
 
-    const res = await fetch(`https://api.typebeathelper.hugosohm.fr/bpm`, {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/bpm`, {
         method: 'POST',
         body: formData,
     }).catch((error) => {

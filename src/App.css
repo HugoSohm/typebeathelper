@@ -12,3 +12,7 @@
 button:disabled {
   cursor: not-allowed;
 }
+
+.analyze {
+  font-weight: 400;
+}
