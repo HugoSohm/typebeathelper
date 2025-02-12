@@ -2,8 +2,16 @@ import {Transition} from "@headlessui/react";
 import {XCircleIcon} from "@heroicons/react/24/outline/index.js";
 import {XMarkIcon} from "@heroicons/react/20/solid/index.js";
 import PropTypes from "prop-types";
+import {useEffect} from "react";
 
 export const ErrorToast = ({ showError, onClose, error }) => {
+    useEffect(() => {
+        if (showError) {
+            const timer = setTimeout(onClose, 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [showError, onClose]);
+
     return (
         <div
             aria-live="assertive"

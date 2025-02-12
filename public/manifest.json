@@ -2,14 +2,13 @@
   "manifest_version": 3,
   "name": "TypeBeat Helper",
   "description": "Download your type beats with BPM and KEY directly from Youtube",
-  "version": "1.0",
+  "version": "1.1",
   "permissions": ["activeTab", "tabs", "downloads"],
   "action": {
     "default_popup": "index.html",
     "default_title": "TypeBeat Helper",
     "default_icon": "icon-128x128.png"
   },
-  "host_permissions": ["http://localhost:3500/*", "https://api.typebeathelper.hugosohm.fr/*"],
   "icons": {
     "128": "icon-128x128.png",
     "48": "icon-48x48.png",
